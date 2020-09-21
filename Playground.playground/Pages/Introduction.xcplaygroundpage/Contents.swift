@@ -7,8 +7,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 10 and 11.
  */
-let preferredWidth = 300
-let preferredHeight = 600
+let preferredWidth = 8 * 50
+let preferredHeight = 8 * 50
 /*:
  ## Required code
  
@@ -35,21 +35,38 @@ PlaygroundPage.current.liveView = canvas
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  */
 
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
-canvas.drawRectangle(at: Point(x: 50, y: 75), width: 100, height: 200)
+//draw the six lines to start the design (bottom-left corber)
 
-/*:
- ## Show the Assistant Editor
- Don't see any results?
- 
- Remember to show the Assistant Editor (1), and then switch to Live View (2):
- 
- ![timeline](timeline.png "Timeline")
-
- ## Use source control
- To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
- 
- Please commit and push your work often.
- 
- ![source_control](source-control.png "Source Control")
- */
+//bottom left
+canvas.drawAxes()
+canvas.drawLine(from: Point(x: 0, y: 7 * 50), to: Point(x: 1 * 50, y: 0))
+canvas.drawLine(from: Point(x: 0, y: 6 * 50), to: Point(x: 2 * 50, y: 0))
+canvas.drawLine(from: Point(x: 0, y: 5 * 50), to: Point(x: 3 * 50, y: 0))
+canvas.drawLine(from: Point(x: 0, y: 4 * 50), to: Point(x: 4 * 50, y: 0))
+canvas.drawLine(from: Point(x: 0, y: 3 * 50), to: Point(x: 5 * 50, y: 0))
+canvas.drawLine(from: Point(x: 0, y: 2 * 50), to: Point(x: 6 * 50, y: 0))
+canvas.drawLine(from: Point(x: 0, y: 1 * 50), to: Point(x: 7 * 50, y: 0))
+//bottom right
+canvas.drawLine(from: Point(x: 1 * 50, y: 0), to: Point(x: 8 * 50, y: 1 * 50))
+canvas.drawLine(from: Point(x: 2 * 50, y: 0), to: Point(x: 8 * 50, y: 2 * 50))
+canvas.drawLine(from: Point(x: 3 * 50, y: 0), to: Point(x: 8 * 50, y: 3 * 50))
+canvas.drawLine(from: Point(x: 4 * 50, y: 0), to: Point(x: 8 * 50, y: 4 * 50))
+canvas.drawLine(from: Point(x: 5 * 50, y: 0), to: Point(x: 8 * 50, y: 5 * 50))
+canvas.drawLine(from: Point(x: 6 * 50, y: 0), to: Point(x: 8 * 50, y: 6 * 50))
+canvas.drawLine(from: Point(x: 7 * 50, y: 0), to: Point(x: 8 * 50, y: 7 * 50))
+//top left
+canvas.drawLine(from: Point(x: 1 * 50, y: 8 * 50), to: Point(x: 0, y: 1 * 50 ))
+canvas.drawLine(from: Point(x: 2 * 50, y: 8 * 50), to: Point(x: 0, y: 2 * 50 ))
+canvas.drawLine(from: Point(x: 3 * 50, y: 8 * 50), to: Point(x: 0, y: 3 * 50 ))
+canvas.drawLine(from: Point(x: 4 * 50, y: 8 * 50), to: Point(x: 0, y: 4 * 50 ))
+canvas.drawLine(from: Point(x: 5 * 50, y: 8 * 50), to: Point(x: 0, y: 5 * 50 ))
+canvas.drawLine(from: Point(x: 6 * 50, y: 8 * 50), to: Point(x: 0, y: 6 * 50 ))
+canvas.drawLine(from: Point(x: 7 * 50, y: 8 * 50), to: Point(x: 0, y: 7 * 50 ))
+//top right
+canvas.drawLine(from: Point(x: 7 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 1 * 50))
+canvas.drawLine(from: Point(x: 6 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 2 * 50))
+canvas.drawLine(from: Point(x: 5 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 3 * 50))
+canvas.drawLine(from: Point(x: 4 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 4 * 50))
+canvas.drawLine(from: Point(x: 3 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 5 * 50))
+canvas.drawLine(from: Point(x: 2 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 6 * 50))
+canvas.drawLine(from: Point(x: 1 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 7 * 50))
