@@ -50,7 +50,6 @@ PlaygroundPage.current.liveView = canvas
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
  
  */
-canvas.drawAxes(withScale: true, by: 50)
 
 // Color constants
 let offWhite = Color(hue: 81, saturation: 5, brightness: 88, alpha: 100)
@@ -77,19 +76,9 @@ for y in stride(from: 0, through: 400, by: 40) {
         
         
         // Set the fill
-        if x == 0 {
+        if x == 0 || x == 400 || y == 0 || y == 400 || y + x > 400 || y == 20{
             canvas.fillColor = limeGreen
-        } else if x == 400 {
-            canvas.fillColor = limeGreen
-        } else if y == 0 {
-            canvas.fillColor = limeGreen
-        } else if y == 400 {
-            canvas.fillColor = limeGreen
-        } else if y + x > 400 {
-            canvas.fillColor = limeGreen
-        } else if y == 20 {
-            canvas.fillColor = limeGreen
-        } else {
+       } else {
             canvas.fillColor = offWhite
         }
         
@@ -114,16 +103,19 @@ canvas.drawText(message: "9 pm over 21", at: Point(x: 10, y: 515), size: 10, ker
 //top right text
 
 canvas.drawText(message: "at the rat", at: Point(x: 270, y: 545), size: 10, kerning: 1)
-canvas.drawText(message: "528 common wealth", at: Point(x: 270, y: 530), size: 10, kerning: 1)
+canvas.drawText(message: "528 commonwealth", at: Point(x: 270, y: 530), size: 10, kerning: 1)
 canvas.drawText(message: "boston, mass.", at: Point(x: 270, y: 515), size: 10, kerning: 1)
 
 //bottom right text
 
 canvas.textColor = offWhite
 
-canvas.drawText(message: "with", at: Point(x: 270, y: 450), size: 13, kerning: 1)
-canvas.drawText(message: "throwing muses", at: Point(x: 270, y: 435), size: 13, kerning: 1)
-canvas.drawText(message: "big dipper", at: Point(x: 270, y: 420), size: 13, kerning: 1)
+canvas.drawText(message: "with", at: Point(x: 270, y: 460), size: 13, kerning: 1)
+canvas.drawText(message: "throwing muses", at: Point(x: 270, y: 445), size: 13, kerning: 1)
+canvas.drawText(message: "big dipper", at: Point(x: 270, y: 430), size: 13, kerning: 1)
+
+
+canvas.drawAxes(withScale: true, by: 50)
 
 
 /*:
