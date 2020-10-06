@@ -100,6 +100,28 @@ for step in stride(from: 300, through: 50, by: -100 ) {
 
 }
 
+//Pattern for top right
+// Black
+canvas.defaultBorderWidth = 15
+canvas.borderColor = black
+canvas.drawShapesWithFill = false
+for step in stride(from: 350, through: 50, by: -100 ) {
+    
+    canvas.drawRectangle(at: Point(x: 400, y: 400), width: step, height: step, anchoredBy: AnchorPosition.centre)
+    
+
+}
+
+// beige
+canvas.borderColor = beige
+for step in stride(from: 300, through: 50, by: -100 ) {
+    
+    canvas.drawRectangle(at: Point(x: 400, y: 400), width: step, height: step, anchoredBy: AnchorPosition.centre)
+    
+
+}
+
+
 
 //canvas.drawRectangle(at: Point(x: 225, y: 0), width: 175, height: 175)
 //canvas.borderColor = beige
