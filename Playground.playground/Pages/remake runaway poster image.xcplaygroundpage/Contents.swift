@@ -60,9 +60,11 @@ canvas.fillColor = pink
 canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
 
-//Pattern
+//Pattern for bottom left
 
 for step in stride(from: 175, through: 13, by: -26 * 2) {
+    
+    step
     
     canvas.borderColor = black
     canvas.drawRectangle(at: Point(x: 0, y: 0), width: step, height: step)
@@ -77,8 +79,31 @@ for step in stride(from: 175, through: 13, by: -26 * 2) {
     
 }
 
+//Pattern for bottom right
+// Black
+canvas.defaultBorderWidth = 15
+canvas.borderColor = black
+canvas.drawShapesWithFill = false
+for step in stride(from: 350, through: 50, by: -100 ) {
+    
+    canvas.drawRectangle(at: Point(x: 400, y: 0), width: step, height: step, anchoredBy: AnchorPosition.centre)
+    
+
+}
+
+// beige
+canvas.borderColor = beige
+for step in stride(from: 300, through: 50, by: -100 ) {
+    
+    canvas.drawRectangle(at: Point(x: 400, y: 0), width: step, height: step, anchoredBy: AnchorPosition.centre)
+    
+
+}
 
 
+//canvas.drawRectangle(at: Point(x: 225, y: 0), width: 175, height: 175)
+//canvas.borderColor = beige
+//canvas.drawRectangle(at: Point(x: 251, y: 0), width: 149, height: 149)
 
 
 //canvas.fillColor = black
