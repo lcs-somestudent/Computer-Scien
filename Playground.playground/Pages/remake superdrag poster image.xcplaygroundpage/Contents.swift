@@ -16,8 +16,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 19 and 20.
  */
-let preferredWidth = 500
-let preferredHeight = 500
+let preferredWidth = 400
+let preferredHeight = 600
 /*:
  ## Required code
  
@@ -45,29 +45,6 @@ PlaygroundPage.current.liveView = canvas
 
  */
 
-//Draw the axes with a scale
-canvas.drawAxes(withScale: true, by: 50)
-
-for y in stride(from: 0, to: 500, by: 50) {
-    
-    for x in stride(from: 0, to: 500, by: 50) {
-        
-        //code in this block is repeated 10 times
-        
-        x
-        
-        //create random size
-        let size = Int.random(in: 25...50)
-        //draw circles
-        
-        canvas.drawEllipse(at: Point(x: x + 25, y: y + 25), width: 50, height: 50)
-        canvas.fillColor = Color.white
-        canvas.drawEllipse(at: Point(x: x + 25, y: y + 25), width: size, height: size)
-        
-    }
-
-        
-}
 
 
 /*:
@@ -85,4 +62,41 @@ for y in stride(from: 0, to: 500, by: 50) {
  
  ![source_control](source-control.png "Source Control")
  */
+// COLORS
+let lightBlue = Color(hue: 193, saturation: 100, brightness: 86, alpha: 100)
+let offWhite = Color(hue: 85, saturation: 8, brightness: 88, alpha: 100)
+let translucentPink = Color(hue: 325, saturation: 100, brightness: 81, alpha: 75)
+let black = Color(hue: 0, saturation: 100, brightness: 0, alpha: 100)
 
+canvas.fillColor = lightBlue
+canvas.drawRectangle(at: Point(x: 200, y: 300), width: 400, height: 600, anchoredBy: AnchorPosition.centre)
+canvas.drawShapesWithFill = false
+
+canvas.defaultBorderWidth = 11
+canvas.borderColor = offWhite
+for step in stride(from: 390, through: 45, by: -47) {
+    
+    canvas.drawEllipse(at: Point(x: 200, y: 400), width: step, height: step)
+    
+}
+canvas.fillColor = offWhite
+canvas.drawShapesWithBorders = false
+canvas.drawShapesWithFill = true
+canvas.drawEllipse(at: Point(x: 200, y: 400), width: 15, height: 15)
+
+canvas.drawShapesWithBorders = true
+canvas.drawShapesWithFill = false
+canvas.borderColor = translucentPink
+canvas.defaultBorderWidth = 11
+for step in stride(from: 390, through: 50, by: -47) {
+    
+    canvas.drawEllipse(at: Point(x: 200, y: 500), width: step, height: step)
+    
+}
+canvas.drawShapesWithBorders = false
+canvas.drawShapesWithFill = true
+canvas.fillColor = translucentPink
+canvas.drawEllipse(at: Point(x: 200, y: 500), width: 15, height: 15)
+
+
+canvas.drawAxes(withScale: true, by: 50)

@@ -16,8 +16,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 19 and 20.
  */
-let preferredWidth = 400
-let preferredHeight = 600
+let preferredWidth = 500
+let preferredHeight = 500
 /*:
  ## Required code
  
@@ -44,16 +44,37 @@ PlaygroundPage.current.liveView = canvas
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
-canvas.drawShapesWithBorders = false
 
-canvas.drawRectangle(at: Point(x: 50, y: 50), width: 400, height: 400)
+//Draw the axes with a scale
+canvas.drawAxes(withScale: true, by: 50)
 
+//line thickness
+canvas.defaultLineWidth = 5
 
+for y in stride(from: 0, to: 500, by: 50) {
+    
+    for x in stride(from: 0, to: 500, by: 50) {
+        
+        //code in this block is repeated 10 times
+    
+        //make a random number that will be 1 or 2
+        let decisionMaker = Int.random(in: 1...2)
+        
+        //now draw a line on way or the other
+        if decisionMaker == 1 {
+            //draw a /
+            canvas.drawLine(from: Point(x: x, y: y), to: Point(x: x+50, y: y+50))
+        } else {
+            //draw a \
+            canvas.drawLine(from: Point(x: x, y: y+50), to: Point(x: x+50, y: y))
+       
+        
+        
+        }
+        
+    }
 
-
-for y in stride(from: 0, through: 400, by: 40) {
-    for x in stride(from: 0, through: 400, by: 40) {
-
+}
 
 
 /*:
@@ -71,3 +92,4 @@ for y in stride(from: 0, through: 400, by: 40) {
  
  ![source_control](source-control.png "Source Control")
  */
+

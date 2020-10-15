@@ -29,7 +29,7 @@ import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
 // Create canvas
-let canvas = Canvas(width: preferredWidth, height: preferredHeight)
+let canvas = Canvas(width: preferredWidth, height: preferredHeight, quality: .Ultra)
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
@@ -47,19 +47,23 @@ PlaygroundPage.current.liveView = canvas
 
 // Replace this comment with your first comment – what is the goal of the code you're about to write?
 
-canvas.defaultLineWidth = 6
+canvas.defaultLineWidth = 3
 
-canvas.drawLine(from: Point(x: 1, y: 600), to: Point(x: 350, y: 550))
-canvas.drawLine(from: Point(x: 1, y: 575), to: Point(x: 325, y: 525))
+canvas.drawLine(from: Point(x: -5, y: 550), to: Point(x: 350, y: 550))
 //draw ellipse
 
 //fill colors
 canvas.drawShapesWithFill
 //draw without fill
-canvas.drawShapesWithFill = false
-canvas.defaultBorderWidth = 5
+canvas.drawShapesWithFill = true
+canvas.defaultBorderWidth = 6
 //draw custom polygon
 canvas.defaultLineWidth = 3
+
+
+
+//filling shape with color
+canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 0, alpha: 25)
 
 //left triangle
 
@@ -74,6 +78,7 @@ canvas.drawCustomShape(with: vertices)
 
 //right triangle
 
+canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 0, alpha: 50)
 
 
 var vertices2: [Point] = []
@@ -86,17 +91,46 @@ canvas.drawCustomShape(with: vertices2)
 
 //bottom triangle
 
+canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 0, alpha: 75)
+
+
 var vertices3: [Point] = []
 vertices3.append(Point(x: 180, y: 340))
 vertices3.append(Point(x: 496, y: 340))
 vertices3.append(Point(x: 400, y: 390))
 vertices3.append(Point(x: 180, y: 340))
 
-
 canvas.drawCustomShape(with: vertices3)
 
-canvas.drawLine(from: Point(x: 387, y: 565), to: Point(x: 700, y: 499))
-canvas.drawLine(from: Point(x: 393, y: 550), to: Point(x: 700, y: 474))
+canvas.defaultLineWidth = 3
+
+canvas.drawLine(from: Point(x: 389, y: 565), to: Point(x: 700, y: 500))
+canvas.drawLine(from: Point(x: 405, y: 535), to: Point(x: 700, y: 450))
+canvas.drawLine(from: Point(x: 420, y: 505), to: Point(x: 700, y: 400))
+canvas.drawLine(from: Point(x: 435, y: 475), to: Point(x: 700, y: 350))
+
+//draw rectangle going into left triangle
+
+canvas.fillColor = Color(hue: 0, saturation: 10, brightness: 30, alpha: 7)
+
+
+var rectangle: [Point] = []
+rectangle.append(Point(x: -5, y: 550))
+rectangle.append(Point(x: -5, y: 520))
+rectangle.append(Point(x: 330, y: 525))
+rectangle.append(Point(x: 350, y: 550))
+
+canvas.drawCustomShape(with: rectangle)
+
+canvas.copyToClipboard()
+
+
+
+
+
+
+
+
 
 /*:
  ## Show the Assistant Editor
