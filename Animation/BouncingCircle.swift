@@ -29,6 +29,8 @@ class BouncingCircle: NSObject, Sketchable {
         
         // Create canvas object – specify size
         canvas = Canvas(width: 500, height: 500)
+        
+        canvas.drawShapesWithBorders = false
     }
     
     // This function runs repeatedly, forever, to create the animated effect
@@ -38,22 +40,26 @@ class BouncingCircle: NSObject, Sketchable {
     
         var int = Int.random(in: 1...500)
         var int2 = Int.random(in: 1...500)
-        let green = Color(hue: int2, saturation: int, brightness: int, alpha: int)
+        let rainbow = Color(hue: int2, saturation: int, brightness: int, alpha: int)
       
-        canvas.fillColor = Color.black
-    canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
+//        canvas.fillColor = Color.black
+        canvas.fillColor = Color(hue: 0, saturation: 100, brightness: 0, alpha: 10)
+        canvas.drawRectangle(at: Point(x: 0, y: 0), width: 500, height: 500)
 
-    canvas.fillColor = green
+    canvas.fillColor = rainbow
      
     y1 += dy1
     x1 += dx1
-        
+      
+    
+       
     canvas.drawEllipse(at: Point(x: x1, y: y1), width: 30, height: 30)
+        
     if x1 >= 500 {
-    dx1 = -1
+        dx1 = -1
         
     } else if x1 <= 0 {
-        dx1 = 1
+        dx1 = Int.random(in: -5...175)
         
     }  else if y1 >= 500 {
             dy1 = -1
