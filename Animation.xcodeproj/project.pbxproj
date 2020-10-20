@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7555F2DC253B378C004C362C /* FourCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555F2DB253B378C004C362C /* FourCorners.swift */; };
+		7555F2DF253DC95D004C362C /* BouncingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555F2DE253DC95D004C362C /* BouncingCircle.swift */; };
 		75761C9A2538D77900FC8736 /* MovingSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75761C992538D77900FC8736 /* MovingSquare.swift */; };
 		75761C9D2539D93800FC8736 /* FiveCircles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75761C9C2539D93800FC8736 /* FiveCircles.swift */; };
 		81064A0A1C130A10007ED524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81064A091C130A10007ED524 /* AppDelegate.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		7555F2DB253B378C004C362C /* FourCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourCorners.swift; sourceTree = "<group>"; };
+		7555F2DE253DC95D004C362C /* BouncingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncingCircle.swift; sourceTree = "<group>"; };
 		75761C992538D77900FC8736 /* MovingSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingSquare.swift; sourceTree = "<group>"; };
 		75761C9C2539D93800FC8736 /* FiveCircles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveCircles.swift; sourceTree = "<group>"; };
 		81064A061C130A10007ED524 /* Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +173,7 @@
 				814ADAF4248EAB6A00F80486 /* TurtleSketch.swift */,
 				7555F2DB253B378C004C362C /* FourCorners.swift */,
 				814ADAFA248EB45F00F80486 /* AudioInputSketch.swift */,
+				7555F2DE253DC95D004C362C /* BouncingCircle.swift */,
 				814ADAFE248EB5E300F80486 /* StaticSketch.swift */,
 				75761C9C2539D93800FC8736 /* FiveCircles.swift */,
 				814ADAFC248EB56900F80486 /* EmptySketch.swift */,
@@ -495,6 +498,7 @@
 				75761C9A2538D77900FC8736 /* MovingSquare.swift in Sources */,
 				814ADAF9248EB34900F80486 /* BasicSketch.swift in Sources */,
 				814ADAFB248EB45F00F80486 /* AudioInputSketch.swift in Sources */,
+				7555F2DF253DC95D004C362C /* BouncingCircle.swift in Sources */,
 				814ADAF1248E9F8200F80486 /* AudioAnalyser.swift in Sources */,
 				814ADAF3248E9FDA00F80486 /* Sketchable.swift in Sources */,
 				814ADAFD248EB56900F80486 /* EmptySketch.swift in Sources */,
