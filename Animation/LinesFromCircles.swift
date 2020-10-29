@@ -83,7 +83,7 @@ class LineFromCircles: NSObject, Sketchable {
             fx1 = -1
             
         } else if int <= 0 {
-            fx1 = Int.random(in: -5...100)
+            fx1 = Int.random(in: -5...50)
             
         }  else if int2 >= 500 {
                 fy1 = -1
@@ -98,4 +98,5 @@ class LineFromCircles: NSObject, Sketchable {
     
 }
 
-
+//
+//if the sum of the radii is larger than the distance between circles draw a line
