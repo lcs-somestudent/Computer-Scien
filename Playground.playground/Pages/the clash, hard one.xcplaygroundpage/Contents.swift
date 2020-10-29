@@ -46,12 +46,12 @@ PlaygroundPage.current.liveView = canvas
  */
 // COLORS / STARTING CODE NEEDS
 
-//canvas.drawShapesWithBorders = false
+canvas.drawShapesWithBorders = false
 
 let orange = Color(hue: 21, saturation: 76, brightness: 94, alpha: 100)
-let blue = Color(hue: 201, saturation: 72, brightness: 85, alpha: 65)
+let blue = Color(hue: 201, saturation: 90, brightness: 60, alpha: 75)
 let offWhite = Color(hue: 208, saturation: 1, brightness: 88, alpha: 100)
-let black = Color(hue: 0, saturation: 100, brightness: 0, alpha: 100)
+let black = Color(hue: 0, saturation: 50, brightness: 0, alpha: 35)
 let deepRed = Color(hue: 5, saturation: 85, brightness: 94, alpha: 100)
 
 // BACKGROUND
@@ -87,8 +87,14 @@ for y in stride(from: 0, through: 400, by: 100) {
         // THE CIRCLES TO THE BOTTOM RIGHT OF DIAMONDS
         
         canvas.fillColor = blue
-        canvas.drawEllipse(at: Point(x: x+75, y: y), width: 60, height: 60)
+        canvas.drawEllipse(at: Point(x: x+75, y: y-75), width: 60, height: 60)
         
+        // THE CIRCLES TO THE TOP RIGHT OF DIAMONDS
+        
+        canvas.fillColor = black
+        canvas.drawEllipse(at: Point(x: x+125, y: y-125), width: 60, height: 60)
+        
+      
         x
         y
         
@@ -98,8 +104,11 @@ for y in stride(from: 0, through: 400, by: 100) {
 // OVER HANG BANNER
 
 canvas.fillColor = deepRed
-
 canvas.drawRectangle(at: Point(x: 200, y: 500), width: 400, height: 200,anchoredBy: AnchorPosition.centre)
+
+// TEXT
+
+canvas.drawText(message: "the clash", at: Point(x: 10, y: 400), size: 50, kerning: 0)
 /*:
  ## Show the Assistant Editor
  Don't see any results?
