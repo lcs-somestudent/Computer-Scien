@@ -42,11 +42,11 @@ PlaygroundPage.current.liveView = canvas
  You can remove the code on line 49 and begin writing your own code.
  
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
-
+ 
  */
 // COLORS / STARTING CODE NEEDS
 
-canvas.drawShapesWithBorders = false
+//canvas.drawShapesWithBorders = false
 
 let orange = Color(hue: 21, saturation: 76, brightness: 94, alpha: 100)
 let blue = Color(hue: 201, saturation: 72, brightness: 85, alpha: 65)
@@ -66,26 +66,33 @@ canvas.drawRectangle(at: Point(x: 50, y: 50), width: 9000, height: 9000
 for y in stride(from: 0, through: 400, by: 100) {
     for x in stride(from: 0, through: 400, by: 100) {
         
-// MAKE THE CUSTOM SHAPE WITH VERTICES
-
-var diamond: [Point] = []
-diamond.append(Point(x: 50, y: 0))
-diamond.append(Point(x: 100, y: 50))
-diamond.append(Point(x: 50, y: 100))
-diamond.append(Point(x: 0, y: 50))
-
-// FILL COLOR WHITE
-
-canvas.fillColor = offWhite
+        // MAKE THE CUSTOM SHAPE WITH VERTICES
+        
+        var diamond: [Point] = []
+        diamond.append(Point(x: x + 50, y: y + 0))
+        diamond.append(Point(x: x + 100, y: y + 50))
+        diamond.append(Point(x: x + 50, y: y + 100))
+        diamond.append(Point(x: x + 0, y: y + 50))
+        
+        // FILL COLOR WHITE
+        
+        canvas.fillColor = offWhite
+        
         canvas.drawCustomShape(with: diamond)
-    
+        
         canvas.fillColor = deepRed
-        canvas.drawEllipse(at: Point(x: x, y: y), width: 60, height: 60)
+        canvas.drawEllipse(at: Point(x: x+50, y: y+50), width: 60, height: 60)
         x
         y
         
     }
 }
+
+// OVER HANG BANNER
+
+canvas.fillColor = deepRed
+
+canvas.drawRectangle(at: Point(x: 200, y: 500), width: 400, height: 200,anchoredBy: AnchorPosition.centre)
 /*:
  ## Show the Assistant Editor
  Don't see any results?
@@ -93,7 +100,7 @@ canvas.fillColor = offWhite
  Remember to show the Assistant Editor (1), and then switch to Live View (2):
  
  ![timeline](timeline.png "Timeline")
-
+ 
  ## Use source control
  To keep your work organized, receive feedback, and earn a high grade in this course, regular use of source control is a must.
  
