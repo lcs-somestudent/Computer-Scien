@@ -74,14 +74,21 @@ for y in stride(from: 0, through: 400, by: 100) {
         diamond.append(Point(x: x + 50, y: y + 100))
         diamond.append(Point(x: x + 0, y: y + 50))
         
-        // FILL COLOR WHITE
+        // FILL COLOR WHITE FOR THE DIAMONDS
         
         canvas.fillColor = offWhite
-        
         canvas.drawCustomShape(with: diamond)
+        
+        // THE CIRCLES INSIDE THE DIAMONDS
         
         canvas.fillColor = deepRed
         canvas.drawEllipse(at: Point(x: x+50, y: y+50), width: 60, height: 60)
+        
+        // THE CIRCLES TO THE BOTTOM RIGHT OF DIAMONDS
+        
+        canvas.fillColor = blue
+        canvas.drawEllipse(at: Point(x: x+75, y: y), width: 60, height: 60)
+        
         x
         y
         
