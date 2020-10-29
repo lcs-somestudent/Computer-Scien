@@ -109,6 +109,15 @@ canvas.drawRectangle(at: Point(x: 200, y: 500), width: 400, height: 200,anchored
 // TEXT
 
 canvas.drawText(message: "the clash", at: Point(x: 10, y: 400), size: 50, kerning: 0)
+
+canvas.drawText(message: "€2.25 / friday", at: Point(x: 10, y: 565), size: 9, kerning: 0)
+canvas.drawText(message: "december 22 1978", at: Point(x: 10, y: 550), size: 9, kerning: 0)
+
+canvas.drawText(message: "christmas party", at: Point(x: 110, y: 565), size: 9, kerning: 0)
+canvas.drawText(message: "with the slits and the innocents", at: Point(x: 110, y: 550), size: 9, kerning: 0)
+
+canvas.drawText(message: "friars aylesbury at maxwell hall", at: Point(x: 255, y: 565), size: 9, kerning: 0)
+canvas.drawText(message: "aylesbury, buckinghamshire, england", at: Point(x: 255, y: 550), size: 9, kerning: 0)
 /*:
  ## Show the Assistant Editor
  Don't see any results?
