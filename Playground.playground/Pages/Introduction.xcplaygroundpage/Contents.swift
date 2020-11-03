@@ -70,3 +70,19 @@ canvas.drawLine(from: Point(x: 4 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 4 * 5
 canvas.drawLine(from: Point(x: 3 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 5 * 50))
 canvas.drawLine(from: Point(x: 2 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 6 * 50))
 canvas.drawLine(from: Point(x: 1 * 50, y: 8 * 50), to: Point(x: 8 * 50, y: 7 * 50))
+
+canvas.defaultLineWidth = 10
+
+var star: [Point] = []
+star.append(Point(x: 0, y: -50))
+star.append(Point(x: 14, y: -20))
+star.append(Point(x: 47, y: -15))
+star.append(Point(x: 23, y: 7))
+star.append(Point(x: 29, y: 40))
+star.append(Point(x: 0, y: 25))
+star.append(Point(x: -29, y: 40))
+star.append(Point(x: -23, y: 7))
+star.append(Point(x: -47, y: -15))
+star.append(Point(x: -14, y: -20))
+
+canvas.drawCustomShape(with: star)

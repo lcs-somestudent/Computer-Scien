@@ -49,7 +49,7 @@ PlaygroundPage.current.liveView = canvas
 canvas.drawShapesWithBorders = false
 
 let orange = Color(hue: 21, saturation: 76, brightness: 94, alpha: 100)
-let blue = Color(hue: 201, saturation: 90, brightness: 60, alpha: 75)
+let blue = Color(hue: 215, saturation: 85, brightness: 70, alpha: 80)
 let offWhite = Color(hue: 208, saturation: 1, brightness: 88, alpha: 100)
 let black = Color(hue: 0, saturation: 50, brightness: 0, alpha: 35)
 let deepRed = Color(hue: 5, saturation: 85, brightness: 94, alpha: 100)
@@ -111,13 +111,13 @@ canvas.drawRectangle(at: Point(x: 200, y: 500), width: 400, height: 200,anchored
 canvas.drawText(message: "the clash", at: Point(x: 10, y: 400), size: 50, kerning: 0)
 
 canvas.drawText(message: "€2.25 / friday", at: Point(x: 10, y: 565), size: 9, kerning: 0)
-canvas.drawText(message: "december 22 1978", at: Point(x: 10, y: 550), size: 9, kerning: 0)
+canvas.drawText(message: "december 22 1978", at: Point(x: 10, y: 555), size: 9, kerning: 0)
 
-canvas.drawText(message: "christmas party", at: Point(x: 110, y: 565), size: 9, kerning: 0)
-canvas.drawText(message: "with the slits and the innocents", at: Point(x: 110, y: 550), size: 9, kerning: 0)
+canvas.drawText(message: "christmas party", at: Point(x: 95, y: 565), size: 9, kerning: 0)
+canvas.drawText(message: "with the slits and the innocents", at: Point(x: 95, y: 555), size: 9, kerning: 0)
 
-canvas.drawText(message: "friars aylesbury at maxwell hall", at: Point(x: 255, y: 565), size: 9, kerning: 0)
-canvas.drawText(message: "aylesbury, buckinghamshire, england", at: Point(x: 255, y: 550), size: 9, kerning: 0)
+canvas.drawText(message: "friars aylesbury at maxwell hall", at: Point(x: 235, y: 565), size: 9, kerning: 0)
+canvas.drawText(message: "aylesbury, buckinghamshire, england", at: Point(x: 235, y: 555), size: 9, kerning: 0)
 /*:
  ## Show the Assistant Editor
  Don't see any results?

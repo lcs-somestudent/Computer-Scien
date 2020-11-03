@@ -125,6 +125,17 @@ canvas.drawCustomShape(with: rectangle)
 canvas.copyToClipboard()
 
 
+        var star: [Point] = []
+        star.append(Point(x: 50, y: 0))
+        star.append(Point(x: 100, y: 50))
+        star.append(Point(x: 50, y: 100))
+        star.append(Point(x: 0, y: 50))
+        star.append(Point(x: 50, y: 0))
+        star.append(Point(x: 100, y: 50))
+        star.append(Point(x: 50, y: 100))
+        star.append(Point(x: 0, y: 50))
+        star.append(Point(x: 50, y: 0))
+        star.append(Point(x: 100, y: 50))
 
 
 
