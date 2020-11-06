@@ -175,8 +175,9 @@ canvas.drawLine(from: Point(x: 238, y: 501), to: Point(x: 243, y: 509))
 canvas.drawLine(from: Point(x: 240, y: 505), to: Point(x: 265, y: 498))
 canvas.drawLine(from: Point(x: 265, y: 498), to: Point(x: 275, y: 500))
 canvas.drawLine(from: Point(x: 275, y: 500), to: Point(x: 285, y: 504))
-canvas.drawLine(from: Point(x: 281, y: 507), to: Point(x: 285, y: 500))
+canvas.drawLine(from: Point(x: 281, y: 507), to: Point(x: 285, y: 500))  
 
+canvas.copyToClipboard()
 /*:
  ## Show the Assistant Editor
  Don't see any results?
