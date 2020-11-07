@@ -41,6 +41,7 @@ class MovingCircle {
     }
     
     // 3. Methods (make things happen)
+    
     func update(on canvas: Canvas) {
         
         // Move the circle
@@ -68,6 +69,24 @@ class MovingCircle {
         }
 
         
+    }
+    
+    func drawLineWhenOverlappingWith(other: MovingCircle,
+                                     on canvas: Canvas) {
+        
+        // Find the distance between the circles
+        let a = Double(self.x - other.x)
+        let b = Double(self.y - other.y)
+        let d = sqrt(a*a + b*b)
+//        print("Distance between circles is \(d)")
+
+        // When the circles overlap, draw a line between them
+        // (when the distance between the circles is less than the sum of the radii)
+        if d < Double(self.radius + other.radius) {
+            canvas.drawLine(from: Point(x: self.x, y: self.y),
+                            to: Point(x: other.x, y: other.y))
+        }
+
     }
     
 }

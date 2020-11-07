@@ -60,18 +60,10 @@ class LineFromCircles: NSObject, Sketchable {
         small.update(on: canvas)
         large.update(on: canvas)
 
-        // Find the distance between the circles
-        let a = Double(small.x - large.x)
-        let b = Double(small.y - small.y)
-        let d = sqrt(a*a + b*b)
-        print("Distance between circles is \(d)")
+        // Check whether the circles overlap
+        small.drawLineWhenOverlappingWith(other: large,
+                                          on: canvas)
 
-        // When the circles overlap, draw a line between them
-        // (when the distance between the circles is less than the sum of the radii)
-        if d < Double(small.radius + large.radius) {
-            canvas.drawLine(from: Point(x: small.x, y: small.y),
-                            to: Point(x: large.x, y: large.y))
-        }
     }
     
     
