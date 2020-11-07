@@ -31,13 +31,13 @@ class LineFromCircles: NSObject, Sketchable {
 //        for _ in stride(from: 1, through: 2, by: 1) {
 //
 //        }
-        for _ in 1...4 {
+        for _ in 1...10 {
             
             var newCircle = MovingCircle(x: Int.random(in: 0...canvas.width),
                                  y: Int.random(in: 0...canvas.height),
                                  dx: 1,
                                  dy: -1,
-                                 diameter: 200)
+                                 diameter: 75)
             
             // Now add the new circle to the list
             circles.append(newCircle)
@@ -70,12 +70,22 @@ class LineFromCircles: NSObject, Sketchable {
         }
 
         // Check whether the circles overlap
-        circles[0].drawLineWhenOverlappingWith(other: circles[1], on: canvas)
-        circles[0].drawLineWhenOverlappingWith(other: circles[2], on: canvas)
-        circles[0].drawLineWhenOverlappingWith(other: circles[3], on: canvas)
-        circles[1].drawLineWhenOverlappingWith(other: circles[2], on: canvas)
-        circles[1].drawLineWhenOverlappingWith(other: circles[3], on: canvas)
-        circles[2].drawLineWhenOverlappingWith(other: circles[3], on: canvas)
+//        circles[0].drawLineWhenOverlappingWith(other: circles[1], on: canvas)
+//        circles[0].drawLineWhenOverlappingWith(other: circles[2], on: canvas)
+//        circles[0].drawLineWhenOverlappingWith(other: circles[3], on: canvas)
+//        circles[1].drawLineWhenOverlappingWith(other: circles[2], on: canvas)
+//        circles[1].drawLineWhenOverlappingWith(other: circles[3], on: canvas)
+//        circles[2].drawLineWhenOverlappingWith(other: circles[3], on: canvas)
+        for i in stride(from: 0, through: circles.count - 2, by: 1) {
+            
+            for j in stride(from: i + 1, through: circles.count - 1, by: 1) {
+                
+                circles[i].drawLineWhenOverlappingWith(other: circles[j], on: canvas)
+                
+            }
+            
+        }
+        
 
     }
     
