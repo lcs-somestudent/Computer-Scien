@@ -84,6 +84,15 @@ class MovingCircle {
         let b = Double(self.y - other.y)
         let d = sqrt(a*a + b*b)
 //        print("Distance between circles is \(d)")
+        
+        // Set the alpha based on distance between circles
+        let alpha = map(value: d,
+                        fromLower: 50,
+                        fromUpper: Double(self.radius + other.radius),
+                        toLower: 0, toUpper: 30)
+        
+        // Set line color
+        canvas.lineColor = Color(hue: 0, saturation: 100, brightness: 0, alpha: Float(alpha))
 
         // When the circles overlap, draw a line between them
         // (when the distance between the circles is less than the sum of the radii)

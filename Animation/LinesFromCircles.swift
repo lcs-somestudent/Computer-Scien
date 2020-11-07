@@ -58,6 +58,9 @@ class LineFromCircles: NSObject, Sketchable {
         canvas.drawShapesWithBorders = true
         canvas.borderColor = Color.black
         
+        // Slower
+        canvas.framesPerSecond = 30
+        
     }
     
     // This function runs repeatedly, forever, to create the animated effect
