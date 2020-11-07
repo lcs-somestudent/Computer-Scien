@@ -46,8 +46,8 @@ class LineFromCircles: NSObject, Sketchable {
                                          y: Int.random(in: 0...canvas.height),
                                          dx: dx,
                                          dy: dy,
-                                         diameter: 75,
-                                         drawCircle: true)
+                                         diameter: 150,
+                                         drawCircle: false)
             
             // Now add the new circle to the list
             circles.append(newCircle)
