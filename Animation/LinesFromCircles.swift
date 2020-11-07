@@ -26,13 +26,27 @@ class LineFromCircles: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
         
         // Add circles
-        for _ in 1...10 {
+        for _ in 1...50 {
             
+            // Randomly pick horizontal direction
+            var dx = 1
+            if Bool.random() == true {
+                dx *= -1
+            }
+
+            // Randomly pick vertical direction
+            var dy = 1
+            if Bool.random() == true {
+                dy *= -1
+            }
+
+            
+            // Create new circle
             var newCircle = MovingCircle(x: Int.random(in: 0...canvas.width),
-                                 y: Int.random(in: 0...canvas.height),
-                                 dx: 1,
-                                 dy: -1,
-                                 diameter: 75)
+                                         y: Int.random(in: 0...canvas.height),
+                                         dx: dx,
+                                         dy: dy,
+                                         diameter: 75)
             
             // Now add the new circle to the list
             circles.append(newCircle)
@@ -61,7 +75,7 @@ class LineFromCircles: NSObject, Sketchable {
         for i in 0...circles.count - 1 {
             circles[i].update(on: canvas)
         }
-
+        
         // Check whether the circles overlap
         for i in stride(from: 0, through: circles.count - 2, by: 1) {
             
@@ -73,7 +87,7 @@ class LineFromCircles: NSObject, Sketchable {
             
         }
         
-
+        
     }
     
     
