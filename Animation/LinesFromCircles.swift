@@ -42,11 +42,12 @@ class LineFromCircles: NSObject, Sketchable {
 
             
             // Create new circle
-            var newCircle = MovingCircle(x: Int.random(in: 0...canvas.width),
+            let newCircle = MovingCircle(x: Int.random(in: 0...canvas.width),
                                          y: Int.random(in: 0...canvas.height),
                                          dx: dx,
                                          dy: dy,
-                                         diameter: 75)
+                                         diameter: 75,
+                                         drawCircle: true)
             
             // Now add the new circle to the list
             circles.append(newCircle)

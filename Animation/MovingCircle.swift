@@ -21,6 +21,7 @@ class MovingCircle {
     var dx: Int
     var dy: Int
     var diameter: Int
+    var drawCircle: Bool
     
     // Computed property
     var radius: Int {
@@ -28,7 +29,7 @@ class MovingCircle {
     }
     
     // 2. Initializer (initialize, or "set up" the properties with a first value)
-    init(x: Int, y: Int, dx: Int, dy: Int, diameter: Int) {
+    init(x: Int, y: Int, dx: Int, dy: Int, diameter: Int, drawCircle: Bool) {
         
         // "self" refers to the properties from THIS class
         // light blue refers to the property (self)
@@ -38,6 +39,7 @@ class MovingCircle {
         self.dx = dx
         self.dy = dy
         self.diameter = diameter
+        self.drawCircle = drawCircle
     }
     
     // 3. Methods (make things happen)
@@ -53,9 +55,12 @@ class MovingCircle {
         canvas.fillColor = Color.white
 
         // Draw the circle
-        canvas.drawEllipse(at: Point(x: x, y: y),
-                           width: diameter,
-                           height: diameter)
+        if drawCircle == true {
+            canvas.drawEllipse(at: Point(x: x, y: y),
+                               width: diameter,
+                               height: diameter)
+
+        }
 
         // Bounce first circle at edges
         if x >= canvas.width {
