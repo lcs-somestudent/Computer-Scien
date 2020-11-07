@@ -18,9 +18,20 @@ class MovingCircle {
     var y: Int
     var dx: Int
     var dy: Int
-    var size: Int
+    var diameter: Int
     
     // 2. Initializer (initialize, or "set up" the properties with a first value)
+    init(x: Int, y: Int, dx: Int, dy: Int, diameter: Int) {
+        
+        // "self" refers to the properties from THIS class
+        // light blue refers to the property (self)
+        // black refers to the local parameter value
+        self.x = x
+        self.y = y
+        self.dx = dx
+        self.dy = dy
+        self.diameter = diameter
+    }
     
     
     // 3. Methods (make things happen)
