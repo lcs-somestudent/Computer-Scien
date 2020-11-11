@@ -20,18 +20,22 @@ class IndividualSpiral {
     //    e.g.: A student at LCS has a house, a hair color, a height
     var lastPoint: Point
     var angleOffset: Int
-    
+    var hue: Float
+
     // 2. Initializer
     //
     //    An initializer has one job: give each property an initial
     //    value
-    init(angleOffset: Int) {
+    init(angleOffset: Int, hue: Float) {
         
         // I want every spiral to begin at the same position
         self.lastPoint = Point(x: 0, y: 0)
         
         // Each spiral begins at a slightly different angle
         self.angleOffset = angleOffset
+        
+        // Set the hue
+        self.hue = hue
         
     }
     
@@ -46,7 +50,7 @@ class IndividualSpiral {
         if canvas.frameCount > 0 {
 
             // Set the radius
-            let radius = CGFloat(canvas.frameCount) / 1
+            let radius = CGFloat(canvas.frameCount) / 0.5
 
             // Set the angle equal to the frameCount
             let angle = CGFloat(canvas.frameCount + angleOffset)
@@ -60,6 +64,12 @@ class IndividualSpiral {
             // Set the next point
             let nextPoint = Point(x: nextX, y: nextY)
 //            print(nextPoint)
+            
+            // Set the line color
+            canvas.lineColor = Color(hue: hue,
+                                     saturation: 80,
+                                     brightness: 90,
+                                     alpha: 100)
 
             // Draw a line from the last point to the next point
             canvas.drawLine(from: lastPoint, to: nextPoint)
