@@ -26,14 +26,26 @@ class Spiral: NSObject, Sketchable {
         canvas = Canvas(width: 500, height: 500)
              
         // Initialize many spirals
-        for i in 1...18 {
+        for i in 1...36 {
             
             // Give the one spiral a starting angle of rotation
-            let spiral = IndividualSpiral(angleOffset: i * 20,
-                                          hue: Float(i) * 20)
-            
-            // Add the new spiral to the list
-            spirals.append(spiral)
+            if i % 2 == 0 {
+                let spiral = IndividualSpiral(angleOffset: i * 10,
+                                              hue: Float(i) * 20,
+                                              growCounterClockwise: true,
+                                              delayInFrames: i * 10)
+                
+                // Add the new spiral to the list
+                spirals.append(spiral)
+            } else {
+                let spiral = IndividualSpiral(angleOffset: i * 10,
+                                              hue: Float(i) * 20,
+                                              growCounterClockwise: false,
+                                              delayInFrames: i * 20)
+                
+                // Add the new spiral to the list
+                spirals.append(spiral)
+            }
         }
         
         // Speed

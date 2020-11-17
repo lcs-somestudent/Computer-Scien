@@ -30,7 +30,8 @@ import PlaygroundSupport
 import CanvasGraphics
 
 // Create canvas
-let canvas = Canvas(width: preferredWidth, height: preferredHeight)
+//let canvas = Canvas(width: preferredWidth, height: preferredHeight)
+let canvas = Canvas(width: preferredWidth, height: preferredHeight, quality: .Ultra)
 
 // Show the canvas in the playground's live view
 PlaygroundPage.current.liveView = canvas
@@ -152,7 +153,7 @@ canvas.drawLine(from: Point(x: 250, y: 150), to: Point(x: 265, y: 145))
 canvas.textColor = yellow
 canvas.drawShapesWithFill = true
 canvas.fillColor = black
-canvas.drawRectangle(at: Point(x: 200, y: 500), width: 400, height: 200,anchoredBy: AnchorPosition.centre)
+canvas.drawRectangle(at: Point(x: 200, y: 500), width: 400, height: 200, anchoredBy: AnchorPosition.centre, borderWidth: 3)
 canvas.drawText(message: "NIRVANA", at: Point(x: 10, y: 400), size: 35, kerning: 5)
 canvas.drawText(message: "december 1993", at: Point(x: 10, y: 580), size: 10, kerning: 0)
 canvas.drawText(message: "20th anniversary", at: Point(x: 10, y: 565), size: 10, kerning: 0)
