@@ -58,11 +58,11 @@ class MathFunction {
     //    Here we describe what behaviour we want to have happen.
     
     // Update (or draw) the position of this spiral
-    func update(on canvas: Canvas) {
+    func update(on canvas: Canvas, usingInputValue x: Int) {
 
         // Start drawing after the first frame
         // NOTE: Ensure that we don't calculate y values when outside the visible range of the canvas
-        if canvas.frameCount > 0 && canvas.frameCount < canvas.width {
+        if x > 0 && x < canvas.width {
 
             // Determine the next x position
             let nextX: CGFloat = CGFloat(canvas.frameCount - canvas.width / 2)

@@ -34,7 +34,7 @@ class FunctionArt1: NSObject, Sketchable {
                                            d: CGFloat(i) * 25 - CGFloat(canvas.width / 2),
                                            c: 0,
                                            canvas: canvas,
-                                           type: .reciprocal)
+                                           type: .quadratic)
             
             // Add it to the list
             functions.append(newFunction)
@@ -58,9 +58,8 @@ class FunctionArt1: NSObject, Sketchable {
 
         // Update the position of all functions
         for function in functions {
-            function.update(on: canvas)
+            function.update(on: canvas, usingInputValue: canvas.frameCount)
         }
-
     
     }
 
