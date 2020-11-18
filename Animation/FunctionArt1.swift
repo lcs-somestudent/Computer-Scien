@@ -42,7 +42,7 @@ class FunctionArt1: NSObject, Sketchable {
         }
         
         // Speed
-        canvas.framesPerSecond = 60
+        canvas.framesPerSecond = 1
     }
 
     // This function runs repeatedly, forever, to create the animated effect
@@ -51,14 +51,22 @@ class FunctionArt1: NSObject, Sketchable {
         // What frame are we on?
 //        print(canvas.frameCount)
         
+        // Clear the canvas
+        canvas.fillColor = Color.white
+        canvas.drawRectangle(at: Point(x: 0, y: 0), width: canvas.width, height: canvas.height)
+        
         canvas.defaultLineWidth = 1
         
         // Set the origin to be the middle of the canvas
         canvas.translate(to: Point(x: canvas.width / 2, y: canvas.height / 2))
 
-        // Update the position of all functions
-        for function in functions {
-            function.update(on: canvas, usingInputValue: canvas.frameCount)
+        for x in 0...canvas.width {
+
+            // Update the position of all functions
+            for function in functions {
+                function.update(on: canvas, usingInputValue: x)
+            }
+
         }
     
     }

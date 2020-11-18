@@ -39,11 +39,7 @@ class MathFunction {
          c: CGFloat,
          canvas: Canvas,
          type: FunctionType) {
-        
-        // I want every function to begin off the left side of the canvas
-        self.lastPoint = Point(x: -1 * canvas.width / 2 - 5,
-                               y: 0)
-        
+                
         // Initialize all properties
         self.a = a
         self.k = k
@@ -51,6 +47,9 @@ class MathFunction {
         self.c = c
         self.type = type
         
+        // I want every function to begin off the left side of the canvas
+        self.lastPoint = Point(x: -1 * canvas.width / 2 - 5,
+                               y: 0)
     }
     
     // 3. Methods
@@ -60,12 +59,19 @@ class MathFunction {
     // Update (or draw) the position of this spiral
     func update(on canvas: Canvas, usingInputValue x: Int) {
 
+        if x == 0 {
+            // I want every function to begin off the left side of the canvas
+            self.lastPoint = Point(x: -1 * canvas.width / 2 - 5,
+                                   y: 0)
+
+        }
+        
         // Start drawing after the first frame
         // NOTE: Ensure that we don't calculate y values when outside the visible range of the canvas
         if x > 0 && x < canvas.width {
 
             // Determine the next x position
-            let nextX: CGFloat = CGFloat(canvas.frameCount - canvas.width / 2)
+            let nextX: CGFloat = CGFloat(x - canvas.width / 2)
 
             // Determine the next y position
             var nextY: CGFloat = 0.0
