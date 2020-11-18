@@ -33,7 +33,8 @@ class FunctionArt1: NSObject, Sketchable {
                                            k: 5.0,
                                            d: CGFloat(i) * 25 - CGFloat(canvas.width / 2),
                                            c: 0,
-                                           canvas: canvas)
+                                           canvas: canvas,
+                                           type: .reciprocal)
             
             // Add it to the list
             functions.append(newFunction)
