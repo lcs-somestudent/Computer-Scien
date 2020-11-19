@@ -30,11 +30,11 @@ class FunctionArt1: NSObject, Sketchable {
             
             // Create the function
             let newFunction = MathFunction(a: 1.0,
-                                           k: 5.0,
+                                           k: 2.0,
                                            d: CGFloat(i) * 25 - CGFloat(canvas.width / 2),
                                            c: 0,
                                            canvas: canvas,
-                                           type: .quadratic)
+                                           type: .absoluteValue)
             
             // Add it to the list
             functions.append(newFunction)
@@ -42,7 +42,7 @@ class FunctionArt1: NSObject, Sketchable {
         }
         
         // Speed
-        canvas.framesPerSecond = 1
+        canvas.framesPerSecond = 60
     }
 
     // This function runs repeatedly, forever, to create the animated effect
@@ -52,7 +52,7 @@ class FunctionArt1: NSObject, Sketchable {
 //        print(canvas.frameCount)
         
         // Clear the canvas
-        canvas.fillColor = Color.white
+        canvas.fillColor = Color(hue: 0, saturation: 0, brightness: 90, alpha: 20)
         canvas.drawRectangle(at: Point(x: 0, y: 0), width: canvas.width, height: canvas.height)
         
         canvas.defaultLineWidth = 1
@@ -64,6 +64,7 @@ class FunctionArt1: NSObject, Sketchable {
 
             // Update the position of all functions
             for function in functions {
+                function.a = 10.0 * sin(((CGFloat(canvas.frameCount) * .pi ) / 180) / 0.25)
                 function.update(on: canvas, usingInputValue: x)
             }
 
